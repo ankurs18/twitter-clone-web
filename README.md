@@ -1,19 +1,35 @@
-# Twitter
+## Twitter Clone
 
-To start your Phoenix server:
+A high-performing and scalable Twitter-clone with the backend engine server designed in Elixir; 
+Used the Phoenix framework to connect the associated web interface built in Javascript and html/css.
 
-  * Install dependencies with `mix deps.get`
-  * Install Node.js dependencies with `cd assets && npm install`
-  * Start Phoenix endpoint with `mix phx.server`
+### Commands to get the server running:
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+1. cd assets && npm install && cd ..
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+2. mix deps.get
 
-## Learn more
+3. mix phx.server
 
-  * Official website: http://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+4. Point your browser to http://localhost:4000/ and benefit!
+
+### Functionalities Implemented:
+
+1. Register a new user account
+2. Login and logout user
+3. Delete account
+4. Tweeting of the following types:
+    a. Simple tweet
+    b. Tweet with hashtags
+    c. Tweet with mentions (other users)
+    d. Retweet (They are visible in a different color than the rest
+       for easy identification)
+    e. Any permutation and combination of the above scenarios
+5. Follow users and subscribe to their tweets
+6. Query to followings:
+    a. Tweets by subscribed (following) users.
+    b. Tweets with hashtags
+    c. Tweets with own mentions.
+7. Live distribution of tweets when a user is online (tweets from subscribed users or tweets where
+    the user is mentioned).
+
