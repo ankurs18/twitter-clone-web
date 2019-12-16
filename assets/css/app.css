@@ -1,3 +1,97 @@
 /* This file is for your main application css. */
 
 @import "./phoenix.css";
+
+body {
+  box-sizing: border-box;
+}
+.modal .md-form .prefix {
+  top: 1rem;
+  font-size: 1rem;
+}
+.error-txt {
+  color: #a51717;
+}
+#user-login,
+#login-logup {
+  display: flex;
+  justify-content: space-between;
+}
+#login-logup li:first-child {
+  order: 1;
+}
+#user-login {
+  margin: 1rem;
+}
+#user-login div {
+  font-size: 1.4rem;
+  margin: 0.375rem;
+  padding: 0.5rem 2.14rem;
+  font-weight: 800;
+}
+#user-login div {
+  order: 1;
+}
+.feed,
+.query {
+  border-left: 10px solid #d3e8ea;
+}
+#go-back {
+  color: #561e1e;
+  font-size: 1.2rem;
+  line-height: 2.5rem;
+}
+.followers .btn {
+  line-height: 5px;
+  font-size: 0.8rem;
+  letter-spacing: normal;
+  height: 2.8rem;
+  padding: 10px;
+  margin: 10px auto 0;
+}
+
+.retweet.btn {
+  font-size: 0.8rem;
+  letter-spacing: normal;
+  height: 2.8rem;
+  padding: 10px;
+  margin: 10px auto 0;
+  float: right;
+}
+
+#msg-list,
+#res-list {
+  display: block;
+  margin: 20px 0;
+  max-height: 800px;
+  overflow-y: auto;
+}
+.tweet {
+  display: block;
+  min-height: 0;
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #d8d4d4;
+  border-radius: 4px;
+  overflow: auto;
+}
+
+.retweet .tweet {
+  background: #faf2fd;
+}
+.tweeter {
+  font-size: 20px;
+  font-weight: bold;
+}
+.query-anchor {
+  margin-top: 20px;
+  padding: 15px 5px;
+  border-top: 1px solid #cfcfcf;
+  line-height: 30px;
+}
+.full-width {
+  width: 100%;
+}
+.heading {
+  font-size: 2rem;
+}

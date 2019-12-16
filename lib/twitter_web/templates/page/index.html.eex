@@ -1,0 +1,10 @@
+<section class="phx-hero">
+  <h1><%= gettext "Welcome to %{name}!", name: "Twitter Clone" %></h1>
+  <p>Tweet as much as you want!!</p>
+</section>
+<section >
+
+<%= render @view_module, "feed.html", assigns %>
+<%= render @view_module, "login.html", assigns %>
+<%= render @view_module, "register.html", assigns %>
+</section>

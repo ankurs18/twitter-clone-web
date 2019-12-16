@@ -8,16 +8,19 @@
 use Mix.Config
 
 # Configures the endpoint
-config :hello, HelloWeb.Endpoint,
+config :twitter, TwitterWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "sG+g6ENb2UcMh8D8Xavg7t8pmcC+BEVmgaq4ccFIfVD3/xwGq4e/Ywm2EauzHG7M",
-  render_errors: [view: HelloWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Hello.PubSub, adapter: Phoenix.PubSub.PG2]
+  secret_key_base: "Ua7WJXFPWREQCRU1pTeQOEGVsrt2xSh0iJdKOvj7Ln/APGyDyUgJnIGd8H4cPTJN",
+  render_errors: [view: TwitterWeb.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: Twitter.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
-  metadata: [:request_id]
+  metadata: [:request_id],
+  compile_time_purge_matching: [
+    [level_lower_than: :info]
+  ]
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason

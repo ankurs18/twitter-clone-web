@@ -1,9 +1,9 @@
-defmodule Hello.MixProject do
+defmodule Twitter.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :hello,
+      app: :twitter,
       version: "0.1.0",
       elixir: "~> 1.5",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -18,7 +18,7 @@ defmodule Hello.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {Hello.Application, []},
+      mod: {Twitter.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -38,7 +38,8 @@ defmodule Hello.MixProject do
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:uuid, "~> 1.1"}
     ]
   end
 end

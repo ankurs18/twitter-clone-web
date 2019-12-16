@@ -1,4 +1,4 @@
-defmodule HelloWeb.ConnCase do
+defmodule TwitterWeb.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -11,7 +11,7 @@ defmodule HelloWeb.ConnCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use HelloWeb.ConnCase, async: true`, although
+  by setting `use TwitterWeb.ConnCase, async: true`, although
   this option is not recommendded for other databases.
   """
 
@@ -21,10 +21,10 @@ defmodule HelloWeb.ConnCase do
     quote do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
-      alias HelloWeb.Router.Helpers, as: Routes
+      alias TwitterWeb.Router.Helpers, as: Routes
 
       # The default endpoint for testing
-      @endpoint HelloWeb.Endpoint
+      @endpoint TwitterWeb.Endpoint
     end
   end
 

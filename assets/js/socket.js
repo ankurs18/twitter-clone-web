@@ -1,14 +1,11 @@
 // NOTE: The contents of this file will only be executed if
 // you uncomment its entry in "assets/js/app.js".
-
+import { Socket } from "phoenix";
 // To use Phoenix channels, the first step is to import Socket,
 // and connect at the socket path in "lib/web/endpoint.ex".
 //
 // Pass the token on params as below. Or remove it
 // from the params if you are not using authentication.
-import {Socket} from "phoenix"
-
-let socket = new Socket("/socket", {params: {token: window.userToken}})
 
 // When you connect, you'll often need to authenticate the client.
 // For example, imagine you have an authentication plug, `MyAuth`,
@@ -52,12 +49,30 @@ let socket = new Socket("/socket", {params: {token: window.userToken}})
 //     end
 //
 // Finally, connect to the socket:
-socket.connect()
+
+export default function socket(token) {
+  let socket = new Socket("/socket", { params: { token: token } });
+  socket.connect();
+  let channel = socket.channel("tweet:" + token, {});
+  channel
+    .join()
+    .receive("ok", resp => {
+      console.log("Joined successfully", resp);
+    })
+    .receive("error", resp => {
+      console.log("Unable to join", resp);
+    });
+  return channel;
+}
 
 // Now that you are connected, you can join channels with a topic:
-let channel = socket.channel("topic:subtopic", {})
-channel.join()
-  .receive("ok", resp => { console.log("Joined successfully", resp) })
-  .receive("error", resp => { console.log("Unable to join", resp) })
 
-export default socket
+// channel.on("shout", function(payload) {
+//   // listen to the 'shout' event
+//   let li = document.createElement("li"); // create new list item DOM element
+//   let name = payload.name || "guest"; // get name from payload or set default
+//   li.innerHTML = "<b>" + name + "</b>: " + payload.message; // set li contents
+//   ul.appendChild(li); // append to list
+// });
+
+// export default socket;
